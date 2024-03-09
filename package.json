@@ -2,7 +2,7 @@
   "name": "streamhub",
   "version": "1.0.0",
   "description": "Video streaming app",
-  "type" : "module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon  src/index.js"
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/AraizNaqvi/StreamHub/issues"
   },
-  "homepage": "https://github.com/AraizNaqvi/StreamHub#readme"
+  "homepage": "https://github.com/AraizNaqvi/StreamHub#readme",
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
 }
