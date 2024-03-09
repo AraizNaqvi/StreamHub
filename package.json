@@ -1,0 +1,23 @@
+{
+  "name": "streamhub",
+  "version": "1.0.0",
+  "description": "Video streaming app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AraizNaqvi/StreamHub.git"
+  },
+  "keywords": [
+    "javascript",
+    "backend"
+  ],
+  "author": "Araiz Naqvi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AraizNaqvi/StreamHub/issues"
+  },
+  "homepage": "https://github.com/AraizNaqvi/StreamHub#readme"
+}
