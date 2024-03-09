@@ -1,5 +1,8 @@
+// Importing the express and using app throught express()
 import express from 'express';
 const app = express();
+
+
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
@@ -12,4 +15,6 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 app.use(cookieParser())
 
+
+//Exporting the app
 export { app };
