@@ -1,4 +1,4 @@
-// Importing the express and using app throught express()
+// Importing the express and using app through express()
 import express from 'express';
 const app = express();
 
@@ -8,6 +8,7 @@ import cookieParser from 'cookie-parser';
 import {LIMIT_SIZE} from './constants.js';
 
 
+// Cross Origin Resource Sharing
 // CORS is like the parent that gives permission given to the website to send/receive data to/from another website for security reasons and takes an object.
 app.use(cors({
     origin: process.env.CORS_ORIGIN, // which origins are allowed to access data from this server

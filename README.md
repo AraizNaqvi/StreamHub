@@ -45,3 +45,14 @@ We move to the **src > app.js** and here we simply create the **app** and export
 # Adding some basic middlewares
 We move to the **src > app.js** and use the **app.use()** to make them.
 <br>(Read through the comments to understand further).
+<br><br>
+
+# Adding Utilities
+These utilities have not been used just yet but are just set up as preparation for future API uses and assessments.
+<br>(Read through the comments to understand further).
+<br><br>
+
+# Adding User and Video Models
+Now, we start to add models and we've done so in **src > models > user.model.js & video.model.js**
+<br>(Read through the comments to understand further).
+<br><br>
