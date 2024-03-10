@@ -56,3 +56,9 @@ These utilities have not been used just yet but are just set up as preparation f
 Now, we start to add models and we've done so in **src > models > user.model.js & video.model.js**
 <br>(Read through the comments to understand further).
 <br><br>
+
+# Finalizing setup with file upload features
+We get some credentials from cloudinary like the cloud name, API key and secret which we store in the .env. Then we start creating a method for cloudinary in **src > utils > cloudinary.utils.js** where we upload the local path for the file type and return the response.<br>
+Moving on before the file is uploaded to cloudinary, we will add a middleware using multer to save it on our disk for a brief moment to run some tests and error handle if needed.
+<br>(Read through the comments to understand further).
+<br><br>
