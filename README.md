@@ -38,4 +38,10 @@ Here, we call the **src > db > index.js** for the **connectDB()** <br>(Read thro
 <br><br>
 
 # Setting up the Express Server
-We move to the **src > app.js** and here we simply create the **app** and export it. From here it is caught by the **src > index.js** which will now use it to run the server on the port mentioned in the .env. <br>(Read through the comments to understand further).
+We move to the **src > app.js** and here we simply create the **app** and export it. From here it is caught by the **src > index.js** which will now use it to run the server on the port mentioned in the .env.
+<br>(Read through the comments to understand further).
+<br><br>
+
+# Adding some basic middlewares
+We move to the **src > app.js** and use the **app.use()** to make them.
+<br>(Read through the comments to understand further).
