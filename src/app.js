@@ -25,7 +25,10 @@ app.use(cookieParser())
 // Serves, receives and checks all cookies and is only accessed by the server
 
 
+import userRouter from './routes/user.routes.js';
 
+
+app.use("/api/v1/users", userRouter)
 
 //Exporting the app
 export { app };
