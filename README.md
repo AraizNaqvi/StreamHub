@@ -69,3 +69,18 @@ Next, created a **src > routes > user.routes.js** in which i've exported the use
 The prefix part is placed in the **app.js** where the user route is first imported and then a middleware is set upon it.
 <br>(Read through the comments to understand further).
 <br><br>
+
+# Creating the Registration
+Head over to **src > controllers > user.controllers.js**
+This involves the following steps:<br>
+1. Getting Users Info from Frontend
+2. Validating Input Data
+3. check if user already exists - username, email
+4. Check for images, check for avatar
+5. Upload them to cloudinary
+6. Create user object - create entry in DB
+7. Remove password and refresh token field from response
+8. Check for user creation
+9. Return response else return error
+<br>(Read through the comments to understand further).
+<br><br>
