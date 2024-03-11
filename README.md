@@ -62,3 +62,10 @@ We get some credentials from cloudinary like the cloud name, API key and secret 
 Moving on before the file is uploaded to cloudinary, we will add a middleware using multer to save it on our disk for a brief moment to run some tests and error handle if needed.
 <br>(Read through the comments to understand further).
 <br><br>
+
+# Setting Routes
+Firstly, i've made a sample registerUser in **src > controllers > user.controller.js** with status code and message so that I can test my route handlers.<br>
+Next, created a **src > routes > user.routes.js** in which i've exported the user route adding a route that handles the suffix part of the route.<br>
+The prefix part is placed in the **app.js** where the user route is first imported and then a middleware is set upon it.
+<br>(Read through the comments to understand further).
+<br><br>
