@@ -84,3 +84,21 @@ This involves the following steps:<br>
 9. Return response else return error
 <br>(Read through the comments to understand further).
 <br><br>
+
+# Solving Bugs
+The following bugs came up while uploading:
+1. Missed 'await' keyword usage
+2. Postman content-type auto usage was missed.
+3. Postman VS Code had some error or idk if it does not provide the same functionality as The Postman Software.
+<br>(Read through the comments to understand further).
+<br><br>
+
+# Creating the Registration
+Head over to **src > controllers > user.controllers.js**
+This involves the following steps:<br>
+1. Get data from req.body
+2. Validate data
+3. Find User
+4. Validate Password
+5. Generate Access and Refresh Tokens
+6. Send cookies

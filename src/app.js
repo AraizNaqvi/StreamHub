@@ -27,7 +27,7 @@ app.use(cookieParser())
 
 // Import the user-route which we will use in our middleware after a call to a certain prefix has been made
 import userRouter from './routes/user.routes.js';
-app.use('/api/v1//users', userRouter) // Prefix Route - /api/v1/users and passed on to userRouter
+app.use('/api/v1/users', userRouter) // Prefix Route - /api/v1/users and passed on to userRouter
 
 
 //Exporting the app

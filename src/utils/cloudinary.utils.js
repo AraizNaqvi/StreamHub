@@ -23,7 +23,7 @@ const uploadOnCloudinary = async (localFilePath) => {
         const response = await cloudinary.uploader.upload(localFilePath, {
             resource_type: 'auto'
         })
-        console.log(`File has been uploaded successfully: ${response.url}`);
+        fs.unlinkSync(localFilePath)
 
         return response;
     }
@@ -32,6 +32,7 @@ const uploadOnCloudinary = async (localFilePath) => {
     // the link i.e. local path through which file was uploaded in
     // the first place.
     catch(error){
+        console.log(`${localFilePath} has been unlinked!`);
         fs.unlinkSync(localFilePath);
     }
 }

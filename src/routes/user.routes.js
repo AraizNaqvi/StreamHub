@@ -1,8 +1,9 @@
 // Import the Router and use the register user.
 import { Router } from "express";
-import { registerUser } from "../controllers/user.controller.js";
+import { loginUser, logoutUser, registerUser, refreshAccessToken } from "../controllers/user.controller.js";
 const router = Router();
 import { upload } from "../middlewares/multer.middleware.js";
+import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 
 // Then we simply create a route suffix after it has been exported to app.js so that when /(any route)
@@ -12,13 +13,20 @@ import { upload } from "../middlewares/multer.middleware.js";
 // registerUser is the function that will be able to use it.
 router.route('/register').post(upload.fields([
     {
-        name: "avatar",
+        name: "coverImage",
         maxCount: 1
     },
     {
-        name: "coverImage",
+        name: "avatar",
         maxCount: 1
     }
 ]), registerUser);
+
+router.route("/login").post(loginUser)
+
+// Secured Routes
+router.route('/logout').post(verifyJWT, logoutUser)
+
+router.route('/refresh-token').post(refreshAccessToken)
 
 export default router;
