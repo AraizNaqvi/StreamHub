@@ -107,17 +107,26 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const generateAccessAndRefreshTokens = async(userId) => {
     try{
+        // The user is found using the ID
         const user = await User.findById(userId);
 
+        // Following which the access and refresh tokens are created
+        // using the methods that we defined using 
+        // User.method... in user.model.js 
         const accessToken = user.generateAccessToken();
         const refreshToken = user.generateRefreshToken();
 
+        // Following the creation of the tokens we set the user's refreshToken to the created refreshToken
+        // Additionally, we save it with validateBeforeSave to false
         user.refreshToken = refreshToken;
         await user.save({validateBeforeSave: false});
 
+        // Return the accessToken and refreshToken
         return {accessToken, refreshToken};
     }
     catch(error){
+
+        // Errors are caught and thrown as server side errors
         throw new apiError(500, "Something went wrong while generating tokens");
     }
 }
@@ -168,6 +177,10 @@ const loginUser = asyncHandler(async (req, res) => {
 })
 
 const logoutUser = asyncHandler(async (req, res) => {
+    // The User is updated through ID while setting using $set: refreshToken to
+    // undefined that would mean that the refresh token has been set to undefined
+    // Additionally, new is set to true meaning a modified version of the doc
+    // is made and updated.
     const user = await User.findByIdAndUpdate(req.user._id, 
         {
             $set: {
@@ -178,7 +191,10 @@ const logoutUser = asyncHandler(async (req, res) => {
             new: true
         }
     )
-
+    
+    // These will be options used for cookies
+    // httpOnly - can only be edited via the server
+    // secure - data will only be exchanged only through an HTTP connection
     const options = {
         httpOnly: true,
         secure: true

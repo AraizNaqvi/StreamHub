@@ -102,3 +102,17 @@ This involves the following steps:<br>
 4. Validate Password
 5. Generate Access and Refresh Tokens
 6. Send cookies
+
+# Creating the Login
+Head over to **src > controllers > user.controllers.js**
+This involves the following steps:<br>
+1. Get data from the req.body particularly email/username and password.
+2. Validate whether a user with the username/email exists.
+3. Validate the password given by user with the actual password.
+4. Generate access and refresh tokens
+5. Logged User had already been stored in the generateAccessAndRefreshTokens to which options are added so that we can create cookies using that.
+6. Now return the res with status, cookies and a json form of a new API response.
+
+# Creating the Logout
+1. Find the user using the ID and update the refreshToken to undefined
+2. Simply clear the cookies and API response.
