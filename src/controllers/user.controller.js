@@ -254,7 +254,7 @@ const updateUserDetails = asyncHandler(async (req, res) => {
     const {fullName, email} = req.body;
     if(!username || !email) throw new apiError(400, "All fields are required")
 
-    User.findByIdAndUpdate(req.user?._id,
+    await User.findByIdAndUpdate(req.user?._id,
         {
             $set: {fullName, email}
         },
@@ -265,7 +265,7 @@ const updateUserDetails = asyncHandler(async (req, res) => {
 const getCurrentUser = asyncHandler(async (req, res) => {
     return res
     .status(200)
-    .json(200, req.user, "Current User fetched successfully!");
+    .json(new apiResponse(200, {}, "Current User fetched successfully!"));
 })
 
 const updateUserAvatar = asyncHandler(async(req, res) => {
